@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局</title>
+
+    <style>
+        /* 通用CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .bottom-line {
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+        .right-line {
+            border-right: 1px solid rgba(0,0,0,0.2);
+        }
+
+        /* 头部 */
+        #page-head {
+            height: 50px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+
+
+            line-height: 50px;
+            text-align: center;
+        }
+
+        /* 侧边栏 */
+        #page-sidebar {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+            background-color: white;
+            width: 250px;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            text-align: center;
+        }
+
+        /* 主体 */
+        #page-main {
+            position: absolute;
+            left: 250px;
+            top: 50px;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            overflow-x: auto;
+            overflow-y: auto;
+
+            background-color: #eee;
+        }
+
+        /* 测试内容大于主体的空间 */
+        .holder {
+            height: 1000px;
+            width: 2000px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="page-head" class="bottom-line">
+        <span>头部</span>
+    </div>
+
+    <div id="page-sidebar" class="right-line">
+        <span>侧边栏</span>
+    </div>
+
+    <div id="page-main">
+        <div class="holder">主体（左右可滚动）</div>
+    </div>
+</body>
+</html>
